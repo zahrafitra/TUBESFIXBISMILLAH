@@ -27,3 +27,7 @@ Route::middleware('guest')->group(function () {
 
 // Logout Route (Authenticated Users)
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+// Public Produk Routes
+Route::get('/produk', [\App\Http\Controllers\Customer\ProdukController::class, 'index'])->name('produk.index');
+Route::get('/produk/{id}', [\App\Http\Controllers\Customer\ProdukController::class, 'show'])->name('produk.show');
