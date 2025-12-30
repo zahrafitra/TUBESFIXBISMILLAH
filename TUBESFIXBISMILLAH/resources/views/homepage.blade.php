@@ -79,28 +79,28 @@
 
             <div class="products-grid">
                 <article class="product">
-                    <img src="{{ asset('public/jamurtiramputih1.png') }}" alt="Jamur Tiram Putih">
+                    <img src="{{ asset('jamurtiramputih1.png') }}" alt="Jamur Tiram Putih">
                     <h4>Jamur Tiram Putih</h4>
                     <p>450+ terjual minggu ini</p>
                     <a class="product-btn" href="{{ route('produk.show', 1) }}">BUY NOW</a>
                 </article>
 
                 <article class="product">
-                    <img src="{{ asset('public/jamurtiramcoklat.png') }}" alt="Jamur Tiram Coklat">
+                    <img src="{{ asset('jamurtiramcoklat.png') }}" alt="Jamur Tiram Coklat">
                     <h4>Jamur Tiram Coklat</h4>
                     <p>200+ terjual minggu ini</p>
                     <a class="product-btn" href="{{ route('produk.show', 2) }}">BUY NOW</a>
                 </article>
 
                 <article class="product">
-                    <img src="{{ asset('public/jamurkuping.png') }}" alt="Jamur Kuping">
+                    <img src="{{ asset('jamurkuping.png') }}" alt="Jamur Kuping">
                     <h4>Jamur Kuping</h4>
                     <p>285+ terjual minggu ini</p>
                     <a class="product-btn" href="{{ route('produk.show', 3) }}">BUY NOW</a>
                 </article>
 
                 <article class="product">
-                    <img src="{{ asset('public/jamurkancing.png') }}" alt="Jamur Kancing">
+                    <img src="{{ asset('jamurkancing.png') }}" alt="Jamur Kancing">
                     <h4>Jamur Kancing</h4>
                     <p>150+ terjual minggu ini</p>
                     <a class="product-btn" href="{{ route('produk.show', 4) }}">BUY NOW</a>
