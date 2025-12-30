@@ -11,7 +11,7 @@
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <img src="{{ asset('images/logo agro.png') }}" alt="Logo Agro" class="brand">
+            <img src="{{ asset('public/logojamur.png') }}" alt="Logo Agro" class="brand">
             <nav class="main-nav">
                 <a href="/">Beranda</a>
                 <a href="#tentang">Tentang Kami</a>
@@ -49,7 +49,7 @@
 
     <main class="container">
         <section id="why" class="why">
-            <img src="{{ asset('images/logo agro.png') }}" class="why-logo" alt="Logo">
+            <img src="{{ asset('public/logojamur.png') }}" class="why-logo" alt="Logo">
             <h2>Mengapa Memilih Agro Jamur Pabuwaran?</h2>
             <p class="why-lead">Jamur kami dibudidayakan dengan teknologi modern dan standar kebersihan tinggi.</p>
 
@@ -121,7 +121,7 @@
     <footer class="site-footer">
         <div class="container footer-inner">
             <div class="brand-foot">
-                <img src="{{ asset('images/logo agro.png') }}" alt="Logo" class="brand-small">
+                <img src="{{ asset('public/logojamur.png') }}" alt="Logo" class="brand-small">
                 <p>Agro Jamur Pabuwaran</p>
             </div>
             <div class="footer-links">
