@@ -21,7 +21,7 @@ class IsAdmin
         }
 
         if (auth()->user()->role !== 'admin') {
-            return redirect()->route('home')->with('error', 'Anda tidak memiliki akses ke halaman ini.');
+            return redirect()->route('homepage')->with('error', 'Anda tidak memiliki akses ke halaman ini.');
         }
 
         return $next($request);
