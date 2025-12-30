@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Public Routes
+// Route::get('/', function () {
+//     return view('index');
+// })->name('home');
 
 Route::get('/', function () {
     return view('homepage');
@@ -28,7 +34,8 @@ Route::middleware('guest')->group(function () {
 // Logout Route (Authenticated Users)
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
-// Public Produk Routes
+// Public Product Route
+
 Route::get('/produk', [\App\Http\Controllers\Customer\ProdukController::class, 'index'])->name('produk.index');
 Route::get('/produk/{id}', [\App\Http\Controllers\Customer\ProdukController::class, 'show'])->name('produk.show');
 
