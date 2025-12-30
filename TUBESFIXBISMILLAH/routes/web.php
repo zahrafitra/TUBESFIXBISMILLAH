@@ -31,3 +31,24 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 // Public Produk Routes
 Route::get('/produk', [\App\Http\Controllers\Customer\ProdukController::class, 'index'])->name('produk.index');
 Route::get('/produk/{id}', [\App\Http\Controllers\Customer\ProdukController::class, 'show'])->name('produk.show');
+
+// Customer Routes (Authenticated Users)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('customer.dashboard');
+    
+    // Keranjang
+    Route::get('/keranjang', [\App\Http\Controllers\Customer\KeranjangController::class, 'index'])->name('keranjang.index');
+    Route::post('/keranjang/tambah', [\App\Http\Controllers\Customer\KeranjangController::class, 'tambah'])->name('keranjang.tambah');
+    Route::put('/keranjang/{key}', [\App\Http\Controllers\Customer\KeranjangController::class, 'update'])->name('keranjang.update');
+    Route::delete('/keranjang/{key}', [\App\Http\Controllers\Customer\KeranjangController::class, 'hapus'])->name('keranjang.hapus');
+    
+    // Checkout
+    Route::get('/checkout', [\App\Http\Controllers\Customer\CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout/proses', [\App\Http\Controllers\Customer\CheckoutController::class, 'proses'])->name('checkout.proses');
+    
+    // Pesanan Customer
+    Route::get('/pesanan', [\App\Http\Controllers\Customer\PesananController::class, 'index'])->name('customer.pesanan.index');
+    Route::get('/pesanan/{id}', [\App\Http\Controllers\Customer\PesananController::class, 'show'])->name('customer.pesanan.show');
+});
