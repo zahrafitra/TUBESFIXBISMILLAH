@@ -145,7 +145,7 @@
 <body>
     <div class="register-container">
         <div class="logo">
-            <img src="{{ asset('public/logojamur.png') }}" alt="Logo" onerror="this.style.display='none'">
+            <img src="{{ asset('logojamur.png') }}" alt="Logo" onerror="this.style.display='none'">
             <h1>Agro Jamur Pabuwaran</h1>
             <p>Buat akun baru</p>
         </div>

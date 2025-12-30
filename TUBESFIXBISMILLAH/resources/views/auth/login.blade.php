@@ -159,7 +159,7 @@
 <body>
     <div class="login-container">
         <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" onerror="this.style.display='none'">
+            <img src="{{ asset('logojamur.png') }}" alt="Logo" onerror="this.style.display='none'">
             <h1>Agro Jamur Pabuwaran</h1>
             <p>Silakan login untuk melanjutkan</p>
         </div>
