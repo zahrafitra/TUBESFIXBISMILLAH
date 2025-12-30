@@ -52,3 +52,45 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pesanan', [\App\Http\Controllers\Customer\PesananController::class, 'index'])->name('customer.pesanan.index');
     Route::get('/pesanan/{id}', [\App\Http\Controllers\Customer\PesananController::class, 'show'])->name('customer.pesanan.show');
 });
+
+// Admin Routes (Admin Only)
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+    
+    // Kelola Produk
+    Route::resource('produk', \App\Http\Controllers\Admin\ProdukController::class)->names([
+        'index' => 'admin.produk.index',
+        'create' => 'admin.produk.create',
+        'store' => 'admin.produk.store',
+        'show' => 'admin.produk.show',
+        'edit' => 'admin.produk.edit',
+        'update' => 'admin.produk.update',
+        'destroy' => 'admin.produk.destroy',
+    ]);
+    
+    // Kelola Pesanan
+    Route::resource('pesanan', \App\Http\Controllers\Admin\PesananController::class)->names([
+        'index' => 'admin.pesanan.index',
+        'show' => 'admin.pesanan.show',
+        'destroy' => 'admin.pesanan.destroy',
+    ])->only(['index', 'show', 'destroy']);
+    
+    // Update Status Pesanan
+    Route::post('pesanan/{id}/update-status', [\App\Http\Controllers\Admin\PesananController::class, 'updateStatus'])
+        ->name('admin.pesanan.updateStatus');
+    Route::post('pesanan/{id}/update-pembayaran', [\App\Http\Controllers\Admin\PesananController::class, 'updatePembayaran'])
+        ->name('admin.pesanan.updatePembayaran');
+    
+    // Kelola Customer
+    Route::resource('customer', \App\Http\Controllers\Admin\CustomerController::class)->names([
+        'index' => 'admin.customer.index',
+        'show' => 'admin.customer.show',
+        'destroy' => 'admin.customer.destroy',
+    ])->only(['index', 'show', 'destroy']);
+    
+    // Laporan
+    Route::get('laporan', [\App\Http\Controllers\Admin\LaporanController::class, 'index'])
+        ->name('admin.laporan.index');
+});
