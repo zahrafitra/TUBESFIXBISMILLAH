@@ -25,3 +25,5 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', [AuthController::class, 'register'])->name('register.submit');
 });
 
+// Logout Route (Authenticated Users)
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
