@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('gambar')->nullable();
             $table->integer('rating')->default(5);
             $table->integer('jumlah_terjual')->default(0);
-            
+            $table->string('kategori')->nullable();
+        
             // Varian produk dengan harga
             $table->integer('harga_250gr')->nullable();
             $table->integer('harga_500gr')->nullable();
