@@ -242,7 +242,7 @@
                     @if($produk->gambar)
                         <div>
                             <p style="font-size: 14px; color: #666; margin-bottom: 8px;">Gambar saat ini:</p>
-                            <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama }}" class="current-img">
+                            <img src="{{ asset($produk->gambar) }}" alt="{{ $produk->nama }}" class="current-img">
                         </div>
                     @endif
                     <div class="file-input-wrapper">

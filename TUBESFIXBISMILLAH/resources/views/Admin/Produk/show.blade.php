@@ -221,7 +221,7 @@
             <div class="product-header">
                 <div>
                     @if($produk->gambar)
-                        <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama }}" class="product-img">
+                        <img src="{{ asset($produk->gambar) }}" alt="{{ $produk->nama }}" class="product-img">
                     @else
                         <div class="product-img" style="background: #ddd; height: 300px;"></div>
                     @endif

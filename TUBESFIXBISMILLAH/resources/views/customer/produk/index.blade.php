@@ -265,11 +265,57 @@
             <div class="products-grid">
                 @foreach($produk as $item)
                 <div class="product-card">
-                    @if($item->gambar)
-                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->nama }}" class="product-img">
-                    @else
-                        <img src="{{ asset('images/placeholder.png') }}" alt="{{ $item->nama }}" class="product-img">
-                    @endif
+                    @php
+                        $img = $item->gambar ?? null;
+                        $tried = [];
+                        $src = asset('jamurt.jpeg');
+                        $found = false;
+
+                        if ($img) {
+                            if (\Illuminate\Support\Str::startsWith($img, ['http://', 'https://'])) {
+                                $src = $img;
+                                $found = true;
+                                $tried[] = 'url:' . $img;
+                            } else {
+                                $path1 = public_path($img);
+                                $tried[] = $path1;
+                                if (file_exists($path1)) {
+                                    $src = asset($img);
+                                    $found = true;
+                                }
+
+                                if (! $found) {
+                                    $path2 = public_path('storage/' . ltrim($img, '/'));
+                                    $tried[] = $path2;
+                                    if (file_exists($path2)) {
+                                        $src = asset('storage/' . ltrim($img, '/'));
+                                        $found = true;
+                                    }
+                                }
+
+                                if (! $found) {
+                                    $path3 = public_path('images/' . ltrim($img, '/'));
+                                    $tried[] = $path3;
+                                    if (file_exists($path3)) {
+                                        $src = asset('images/' . ltrim($img, '/'));
+                                        $found = true;
+                                    }
+                                }
+
+                                if (! $found) {
+                                    $tried[] = 'asset_guess:' . $img;
+                                    $src = asset($img);
+                                }
+                            }
+                        } else {
+                            $tried[] = 'fallback:jamurt.jpeg';
+                        }
+                    @endphp
+
+                    <!-- IMG_SRC: {{ $src }} -->
+                    <!-- IMG_TRIED: {{ implode(' | ', $tried) }} -->
+
+                    <img src="{{ $src }}" alt="{{ $item->nama }}" class="product-img">
                     <div class="product-body">
                         <h3 class="product-title">{{ $item->nama }}</h3>
                         <div class="product-meta">

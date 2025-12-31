@@ -311,47 +311,14 @@
                 <div>
                     <div class="product-image">
                         @if($produk->gambar)
-                            <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama }}">
-                        @else
-                            <img src="{{ asset('images/placeholder.png') }}" alt="{{ $produk->nama }}">
+                            <img src="{{ asset($produk->gambar) }}" alt="{{ $produk->nama }}">
+                            @else
+                            <img src="{{ asset('jamurt.jpeg') }}" alt="default">
                         @endif
+
                     </div>
 
-                    @if($produkLainnya->count() > 0)
-                    <!-- Produk Jamur Lainnya -->
-                    <div style="margin-top: 30px;">
-                        <h3 style="color: #0d4d4d; margin-bottom: 15px; font-size: 18px; font-weight: 600;">Tambah Produk Jamur Lain</h3>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                            @foreach($produkLainnya as $item)
-                            <a href="{{ route('produk.show', $item->id) }}" style="background: #f8f9fa; border-radius: 8px; padding: 12px; text-decoration: none; color: inherit; display: block; transition: all 0.3s; border: 2px solid #e0e0e0;" onmouseover="this.style.borderColor='#0d4d4d'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e0e0e0'; this.style.transform='translateY(0)'">
-                                <div style="text-align: center; margin-bottom: 8px;">
-                                    @if($item->gambar)
-                                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->nama }}" 
-                                            style="width: 100%; height: 100px; object-fit: cover; border-radius: 6px;">
-                                    @else
-                                        <div style="width: 100%; height: 100px; display: flex; align-items: center; justify-content: center; background: #e9ecef; border-radius: 6px; font-size: 36px;">
-                                            🍄
-                                        </div>
-                                    @endif
-                                </div>
-                                <div style="text-align: center;">
-                                    <h4 style="color: #0d4d4d; font-size: 13px; margin-bottom: 6px; font-weight: 600; line-height: 1.3;">{{ $item->nama }}</h4>
-                                    <div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 6px; color: #666; font-size: 11px;">
-                                        <span>⭐ {{ $item->rating }}</span>
-                                        <span>{{ $item->jumlah_terjual }}+ terjual</span>
-                                    </div>
-                                    <div style="color: #0d4d4d; font-weight: bold; font-size: 13px;">
-                                        Rp {{ number_format($item->harga_250gr, 0, ',', '.') }}
-                                    </div>
-                                </div>
-                            </a>
-                            @endforeach
-                        </div>
-                    </div>
-                    @endif
-                </div>
-
+                   
                 <div class="product-info">
                     <h1>{{ $produk->nama }}</h1>
 

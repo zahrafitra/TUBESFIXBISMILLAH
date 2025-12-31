@@ -374,7 +374,7 @@
                         <td>
                             <div style="display: flex; align-items: center; gap: 10px;">
                                 @if($item->produk && $item->produk->gambar)
-                                    <img src="{{ asset('storage/' . $item->produk->gambar) }}" alt="{{ $item->nama_produk }}" class="produk-img">
+                                    <img src="{{ asset($item->produk->gambar) }}" alt="{{ $item->nama_produk }}" class="produk-img">
                                 @endif
                                 <strong>{{ $item->nama_produk }}</strong>
                             </div>

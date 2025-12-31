@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Produk;
+use App\Public;
 
 class ProdukSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class ProdukSeeder extends Seeder
             [
                 'nama' => 'Jamur Tiram Putih',
                 'deskripsi' => 'Jamur tiram putih segar dengan kualitas terbaik. Kaya akan protein, serat, dan rendah kalori. Cocok untuk berbagai masakan seperti tumis, sup, atau goreng tepung.',
-                'gambar' => 'produk/placeholder.jpg',
+                'gambar' => 'jamurtiramputih1.png',
                 'rating' => 5,
                 'jumlah_terjual' => 450,
                 'harga_250gr' => 6000,
@@ -32,7 +33,7 @@ class ProdukSeeder extends Seeder
             [
                 'nama' => 'Jamur Tiram Coklat',
                 'deskripsi' => 'Jamur tiram coklat dengan tekstur yang lebih kenyal dan rasa yang lebih kuat. Memberikan profil rasa yang lebih "berdaging", menjadikannya pengganti daging yang populer dan sempurna untuk semur.',
-                'gambar' => 'produk/placeholder.jpg',
+                'gambar' => 'jamurtiramcoklat.png',
                 'rating' => 5,
                 'jumlah_terjual' => 200,
                 'harga_250gr' => 6000,
@@ -45,7 +46,7 @@ class ProdukSeeder extends Seeder
             [
                 'nama' => 'Jamur Kuping',
                 'deskripsi' => 'Jamur kuping premium dengan tekstur renyah dan kaya akan nutrisi. Sangat baik untuk kesehatan jantung dan mengandung antioksidan tinggi. Cocok untuk capcay, sup, dan tumisan.',
-                'gambar' => 'produk/placeholder.jpg',
+                'gambar' => 'jamurkuping.png',
                 'rating' => 5,
                 'jumlah_terjual' => 285,
                 'harga_250gr' => 8000,
@@ -58,7 +59,7 @@ class ProdukSeeder extends Seeder
             [
                 'nama' => 'Jamur Kancing',
                 'deskripsi' => 'Jamur kancing segar berkualitas premium. Memiliki tekstur lembut dan rasa yang mild. Sempurna untuk salad, pizza, pasta, soup, dan berbagai masakan western maupun oriental.',
-                'gambar' => 'produk/placeholder.jpg',
+                'gambar' => 'jamurkancing.png',
                 'rating' => 5,
                 'jumlah_terjual' => 150,
                 'harga_250gr' => 12000,

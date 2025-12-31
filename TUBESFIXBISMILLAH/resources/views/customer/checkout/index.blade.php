@@ -318,9 +318,9 @@
                     @foreach($keranjang as $item)
                     <div class="summary-item">
                         @if($item['gambar'])
-                            <img src="{{ asset('storage/' . $item['gambar']) }}" alt="{{ $item['nama'] }}">
+                            <img src="{{ asset($item['gambar']) }}" alt="{{ $item['nama'] }}">
                         @else
-                            <img src="{{ asset('images/placeholder.png') }}" alt="{{ $item['nama'] }}">
+                            <img src="{{ asset('jamurt.jpeg') }}" alt="{{ $item['nama'] }}">
                         @endif
                         <div class="summary-item-info">
                             <div class="summary-item-name">{{ $item['nama'] }}</div>

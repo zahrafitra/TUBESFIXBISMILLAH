@@ -250,7 +250,7 @@
                         <tr>
                             <td>
                                 @if($item->gambar)
-                                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->nama }}" class="produk-img">
+                                    <img src="{{ asset($item->gambar) }}" alt="{{ $item->nama }}" class="produk-img">
                                 @else
                                     <div class="produk-img" style="background: #ddd;"></div>
                                 @endif

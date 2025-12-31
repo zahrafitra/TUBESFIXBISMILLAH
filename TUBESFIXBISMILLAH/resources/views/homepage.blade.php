@@ -11,7 +11,7 @@
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <img src="{{ asset('public/logojamur.png') }}" alt="Logo Agro" class="brand">
+            <img src="{{ asset('logojamur.png') }}" alt="Logo Agro" class="brand">
             <nav class="main-nav">
                 <a href="/">Beranda</a>
                 <a href="#tentang">Tentang Kami</a>
@@ -36,20 +36,24 @@
     </header>
 
     <section class="hero">
-        <div class="hero-overlay">
-            <div class="container hero-content">
-                <h1>AGRO JAMUR PABUWARAN</h1>
-                <p class="lead">Agro Jamur adalah penyedia jamur segar berkualitas tinggi yang dipanen langsung dari
-                    budidaya modern dan higienis.</p>
-                <a href="#produk" class="btn-cta">Lihat Jamur</a>
-            </div>
+    <img src="{{ asset('background (3).png') }}" alt="Kebun Jamur" class="hero-bg">
+
+    <div class="hero-overlay">
+        <div class="container hero-content">
+            <h1>AGRO JAMUR PABUWARAN</h1>
+            <p class="lead">
+                Agro Jamur adalah penyedia jamur segar berkualitas tinggi yang dipanen langsung
+                dari budidaya modern dan higienis.
+            </p>
+            <a href="#produk" class="btn-cta">Lihat Jamur</a>
         </div>
-        <img src="{{ asset('images/background fix.jpg') }}" alt="Kebun Jamur" class="backgpround fix">
-    </section>
+    </div>
+</section>
+
 
     <main class="container">
         <section id="why" class="why">
-            <img src="{{ asset('public/logojamur.png') }}" class="why-logo" alt="Logo">
+            <img src="{{ asset('logojamur.png') }}" class="why-logo" alt="Logo">
             <h2>Mengapa Memilih Agro Jamur Pabuwaran?</h2>
             <p class="why-lead">Jamur kami dibudidayakan dengan teknologi modern dan standar kebersihan tinggi.</p>
 
@@ -118,18 +122,39 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="brand-foot">
-                <img src="{{ asset('public/logojamur.png') }}" alt="Logo" class="brand-small">
-                <p>Agro Jamur Pabuwaran</p>
-            </div>
-            <div class="footer-links">
-                <p>Kontak kami</p>
-                <p>0821-xxxx-xxxx</p>
-            </div>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="{{ asset('logojamur.png') }}" alt="Logo" class="footer-logo" />
+        <br>
+        <p><strong>Agro Jamur Pabuwaran</strong></p>
+        <br>
+        <p>Marketing : Jl. Gn. Merapi No.RT. 02/ 02, Pabuwaran, Pabuaran,
+          Kec. Purwokerto Utara, Kabupaten Banyumas,
+          Jawa Tengah, Indonesia</p>
+        <br>
+        <p>Operasional : Belakang UIN, Karanganjing, Purwanegara,
+          Purwokerto Timur, Kabupaten Banyumas,
+          Jawa Tengah, Indonesia</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Kontak Kami</strong></p>
+        <br>
+        <p>Telpon       : 0821-3848-7484</p>
+        <br>
+        <p>Instagram    : @agrojamurpabuaran</p>
+        <br>
+        <p>Facebook     : @agrojamur </p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2025 Agro Jamur Pabuwaran. Hak Cipta Dilindungi.
+    </div>
+  </footer>
+
 </body>
 
 </html>

@@ -286,9 +286,9 @@
                     <div class="cart-item">
                         <div class="item-image">
                             @if($item['gambar'])
-                                <img src="{{ asset('storage/' . $item['gambar']) }}" alt="{{ $item['nama'] }}">
+                                <img src="{{ asset($item['gambar']) }}" alt="{{ $item['nama'] }}">
                             @else
-                                <img src="{{ asset('images/placeholder.png') }}" alt="{{ $item['nama'] }}">
+                                <img src="{{ asset('jamurt.jpeg') }}" alt="{{ $item['nama'] }}">
                             @endif
                         </div>
                         <div class="item-info">

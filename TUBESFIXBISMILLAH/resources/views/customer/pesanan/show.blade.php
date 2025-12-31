@@ -301,9 +301,9 @@
                     <div class="order-item">
                         <div class="item-image">
                             @if($item->produk && $item->produk->gambar)
-                                <img src="{{ asset('storage/' . $item->produk->gambar) }}" alt="{{ $item->nama_produk }}">
+                                <img src="{{ asset($item->produk->gambar) }}" alt="{{ $item->nama_produk }}">
                             @else
-                                <img src="{{ asset('images/placeholder.png') }}" alt="{{ $item->nama_produk }}">
+                                <img src="{{ asset('jamurt.jpeg') }}" alt="{{ $item->nama_produk }}">
                             @endif
                         </div>
                         <div class="item-info">
